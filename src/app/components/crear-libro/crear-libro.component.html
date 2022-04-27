@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="class row">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="title"> {{ title | uppercase }} </span>
+                    <form class="mt-3" [formGroup]="libroForm" (ngSubmit)="addLibro()">
+                        <div class="mb-3">
+                            <input type="text" formControlName="ISBN" 
+                                class="form-control form-control-lg" placeholder="ISBN">
+                            <div class="text-danger"
+                                *ngIf="libroForm.get('ISBN')?.hasError('required') && libroForm.get('ISBN')?.touched">
+                                <span>El ISBN del libro és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="title" 
+                                class="form-control form-control-lg" placeholder="title">
+                            <div class="text-danger"
+                                *ngIf="libroForm.get('title')?.hasError('required') && libroForm.get('title')?.touched">
+                                <span>El nom del libro és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="description"
+                                class="form-control form-control-lg" placeholder="description">
+                            <div class="text-danger"
+                                *ngIf="libroForm.get('description')?.hasError('required') && libroForm.get('description')?.touched">
+                                <span>L'edat del libro és obligatori</span>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <input type="text" formControlName="author"
+                                class="form-control form-control-lg" placeholder="author">
+                            <div class="text-danger"
+                                *ngIf="libroForm.get('author')?.hasError('required') && libroForm.get('author')?.touched">
+                                <span>El author del libro és obligatori</span>
+                             </div>
+                        </div>
+                        <div class="mb-3">
+                            <button routerLink="/" class="btn btn-secondary btn-lg float-start">TORNAR</button>
+                            <button type="submit" [disabled]="libroForm.invalid" class="btn btn-success btn-lg float-end">ACCEPTAR</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

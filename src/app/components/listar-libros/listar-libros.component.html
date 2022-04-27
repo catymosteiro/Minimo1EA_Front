@@ -1,0 +1,36 @@
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+            <div class="card">
+                <div class="card-body text-center">
+                    <span class="title">L I B R O S</span>
+                    <button class="btn btn-success float-end" routerLink="/crear-libro">Nuevo libro</button>
+                    <table *ngIf="listlibros.length > 0" class="table table-striped mt-3">
+                     <thead>
+                       <tr>
+                         <th scope="col">ISBN</th>
+                         <th scope="col">title</th>
+                         <th scope="col">description</th>
+                         <th scope="col">author</th>
+                         <th scope="col"></th>
+                       </tr>
+                     </thead>
+                     <tbody>
+                       <tr *ngFor="let libro of listlibros">
+                         <td>{{ libro.ISBN }}</td>
+                         <td>{{ libro.title }}</td>
+                         <td>{{ libro.description }}</td>
+                         <td>{{ libro.author }}</td>
+                         <td>
+                             <i [routerLink]="['/editar-libro', libro.author]" class="fa-solid fa-pen-to-square text-primary"></i>
+                             <i (click)="deletelibro(libro.author)" class="fa-solid fa-trash text-danger"></i>
+                         </td>
+                       </tr>
+                     </tbody>
+                   </table>
+                   <h5 style="text-align: start; margin-top: 10px;" *ngIf="listlibros.length == 0">No hi ha libros a la base de dades</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
