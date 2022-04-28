@@ -29,7 +29,7 @@ export class ListarvaloracionComponent implements OnInit {
 
   deleteValoracion(author: string) {
     this._valoracionservice.deleteValoracion(author).subscribe(data => {
-      this.toastr.error('La valoracion ha estat eliminat amb exit', 'valoracion eliminat');
+      this.toastr.error('La valoracion se ha eliminado con exito!', 'Valoracion eliminada');
       this.getValoraciones();
     }, error => {
       console.log(error);

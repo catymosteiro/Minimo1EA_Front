@@ -48,7 +48,7 @@ export class CrearlibroComponent implements OnInit {
     if(this.author !== null){
       // Edit libro
       this._libroService.editLibro(this.author, libro).subscribe(data => {
-        this.toastr.info('El libro ha estat editat amb exit!', 'libro Editat');
+        this.toastr.info('El libro se ha editado con exito!', 'Libro editat');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);
@@ -59,7 +59,7 @@ export class CrearlibroComponent implements OnInit {
       // Add libro
       console.log(libro);
       this._libroService.addLibro(libro).subscribe(data => {
-        this.toastr.success('El libro ha estat creat amb exit!', 'libro Creat');
+        this.toastr.success('El libro se ha creado con exito!', 'Libro creado');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);

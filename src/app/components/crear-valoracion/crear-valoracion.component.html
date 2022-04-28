@@ -16,6 +16,10 @@
                         <div class="mb-3">
                             <input type="text" formControlName="user" 
                                 class="form-control form-control-lg" placeholder="user">
+                            <div class="text-danger"
+                                *ngIf="valoracionForm.get('user')?.hasError('required') && valoracionForm.get('user')?.touched">
+                               <span>Debe introducir el id del usuario porque es obligatorio</span>
+                         </div>   
                         </div>
                         <div class="mb-3">
                             <input type="text" formControlName="description"

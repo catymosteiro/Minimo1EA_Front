@@ -28,7 +28,7 @@ export class CrearvaloracionComponent implements OnInit {
       puntuacion: ['', Validators.required],
       description: ['', Validators.required],
       identificador: ['', Validators.required],
-      user: [''],
+      user: ['', Validators.required],
     });
     this.identificador = this.aRouter.snapshot.paramMap.get('identificador');
   }
@@ -48,7 +48,7 @@ export class CrearvaloracionComponent implements OnInit {
     if(this.identificador !== null){
       // Edit valoracion
       this._valoracionService.editValoracion(this.identificador, valoracion).subscribe(data => {
-        this.toastr.info('El valoracion ha estat editat amb exit!', 'valoracion Editat');
+        this.toastr.info('El valoracion se ha editado con exito!', 'Valoracion Editada');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);
@@ -59,7 +59,7 @@ export class CrearvaloracionComponent implements OnInit {
       // Add valoracion
       console.log(valoracion);
       this._valoracionService.addValoracion(valoracion).subscribe(data => {
-        this.toastr.success('El valoracion ha estat creat amb exit!', 'valoracion Creat');
+        this.toastr.success('El valoracion se ha creado con exito!', 'Valoracion Creada');
         this.router.navigate(['/']);
       }, error => {
         console.log(error);

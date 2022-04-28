@@ -29,7 +29,7 @@ export class ListarlibrosComponent implements OnInit {
 
   deletelibro(author: string) {
     this._libroservice.deleteLibro(author).subscribe(data => {
-      this.toastr.error('El libro ha estat eliminat amb exit', 'libro eliminat');
+      this.toastr.error('El libro se ha eliminado con exito!', 'Libro eliminado');
       this.getLibros();
     }, error => {
       console.log(error);
