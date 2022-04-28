@@ -13,6 +13,8 @@ import { ListarUsersComponent } from './components/listar-users/listar-users.com
 import { CrearlibroComponent } from './components/crear-libro/crear-libro.component';
 import { ListarlibrosComponent } from './components/listar-libros/listar-libros.component';
 import { ListarTodoComponent } from './components/listar-todo/listar-todo.component';
+import { CrearvaloracionComponent } from './components/crear-valoracion/crear-valoracion.component';
+import { ListarvaloracionComponent } from './components/listar-valoraciones/listar-valoraciones.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { ListarTodoComponent } from './components/listar-todo/listar-todo.compon
     ListarUsersComponent,
     CrearlibroComponent,
     ListarlibrosComponent,
-    ListarTodoComponent
+    ListarTodoComponent,
+    CrearvaloracionComponent,
+    ListarvaloracionComponent
   ],
   imports: [
     BrowserModule,
